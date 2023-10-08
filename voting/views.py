@@ -7,7 +7,7 @@ from .models import Poll
 
 
 
-
+@login_required
 def index(request):
     polls = Poll.objects.all()
     context = {
@@ -48,7 +48,7 @@ def vote(request, poll_id):
     if Vote.objects.filter(voter=voter, poll=poll).exists():
         messages.add_message(request, messages.ERROR, 'You have already voted in this poll.')
         context = {'has_error': True}
-        return redirect('home')  # Redirect to the home page
+        return redirect('home') 
 
     if request.method == 'POST':
         selected_candidate = request.POST.get('poll')
@@ -83,7 +83,7 @@ def vote(request, poll_id):
     return render(request, 'voting/vote.html', context)
 
 
-
+@login_required
 def results(request, poll_id):
     poll = Poll.objects.get(pk=poll_id)
     context = {

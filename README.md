@@ -40,7 +40,7 @@ Access the application at http://127.0.0.1:8000/ in your web browser.
 
 
 ## To-Do
-Implement tests for views and forms.
+Implement tests for views and forms(also set up GitHub Actions).
 Improve the consistency of the frontend.
 Deploy the application on a cloud platform.
 
