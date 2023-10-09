@@ -16,6 +16,7 @@ def index(request):
     return render(request, 'voting/index.html', context)
 
 
+@login_required
 def create_poll(request):
     if request.method == 'POST':
         form = CreatePollForm(request.POST)

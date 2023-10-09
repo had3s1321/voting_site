@@ -4,37 +4,50 @@
 
 {% block main %}
 <div class="row">
-    <div class="col-lg-8 col-lg-offset-2">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Voter Registration</h3>
-            </div>
+    <div class="col-md-6 col-md-offset-3">
+        <h2>Voter Registration</h2>
 
+        <div class="panel panel-default">
             <div class="panel-body">
-                <form method="post">
+                <form method="post" class="form-horizontal">
                     {% csrf_token %}
                     {{ form.non_field_errors }}
                     <div class="form-group">
-                        <label for="{{ form.first_name.id_for_label }}">First Name:</label>
-                        {{ form.first_name }}
-                        {{ form.first_name.errors }}
+                        <label for="{{ form.first_name.id_for_label }}" class="col-sm-3 control-label">First
+                            Name:</label>
+                        <div class="col-sm-9">
+                            {{ form.first_name }}
+                            {{ form.first_name.errors }}
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="{{ form.last_name.id_for_label }}">Last Name:</label>
-                        {{ form.last_name }}
-                        {{ form.last_name.errors }}
+                        <label for="{{ form.last_name.id_for_label }}" class="col-sm-3 control-label">Last Name:</label>
+                        <div class="col-sm-9">
+                            {{ form.last_name }}
+                            {{ form.last_name.errors }}
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="{{ form.date_of_birth.id_for_label }}">Date of Birth:</label>
-                        {{ form.date_of_birth }}
-                        {{ form.date_of_birth.errors }}
+                        <label for="{{ form.date_of_birth.id_for_label }}" class="col-sm-3 control-label">Date of
+                            Birth:</label>
+                        <div class="col-sm-9">
+                            {{ form.date_of_birth }}
+                            {{ form.date_of_birth.errors }}
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="{{ form.social_security_number.id_for_label }}">Social Security Number:</label>
-                        {{ form.social_security_number }}
-                        {{ form.social_security_number.errors }}
+                        <label for="{{ form.social_security_number.id_for_label }}"
+                            class="col-sm-3 control-label">Social Security Number:</label>
+                        <div class="col-sm-9">
+                            {{ form.social_security_number }}
+                            {{ form.social_security_number.errors }}
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-info">Register</button>
+                    <div class="form-group">
+                        <div class="col-sm-offset-3 col-sm-9">
+                            <button type="submit" class="btn btn-primary">Register</button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
